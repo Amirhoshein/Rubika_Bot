@@ -25,12 +25,12 @@ async def main():
             await startBot(client=client)
             @client.on(handlers.MessageUpdates(models.is_group))
             async def updates(update: Message):
-
-                if update.raw_text == 'a' :
+                # این پایین در جواب سلام میگه سلام
+                if update.raw_text == 'سلام' :
                     await client.send_message(
                         object_guid=update.object_guid,
-                        message='aa',
-                        reply_to_message_id=update.message_id
+                        message='سلام :D',
+                        reply_to_message_id=update.message_id # این پیام اپلود شده رو ریپلای میکنه
                     )
 
             await client.run_until_disconnected()
